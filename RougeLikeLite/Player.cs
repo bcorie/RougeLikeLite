@@ -71,12 +71,28 @@ namespace RougeLikeLite
         }
 
         /// <summary>
-        /// Attack a creature. Deal damage to the enemy.
+        /// Attacks a creature to deal the
+        /// player's amount of damage.
         /// </summary>
-        /// <param name="enemy">The entity the player is attacking.</param>
-        public void attack(ICreature enemy)
+        /// <param name="c">Creature to attack</param>
+        /// <returns>The damage in the attack.</returns>
+        public int attack(ICreature c)
         {
-            enemy.Health -= Damage;
+            c.Health -= Damage;
+            return Damage;
+        }
+
+        /// <summary>
+        /// Defend against an attack.
+        /// </summary>
+        /// <param name="attack">How much damage is in the attack.</param>
+        /// <returns>How much damage gets through the defense.</returns>
+        public int defend(int attack)
+        {
+            int defense = Damage / 3;
+            int result = attack - defense;
+            if (result <= 0) { return 0; }
+            return result;
         }
 
         /// <summary>

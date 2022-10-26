@@ -47,10 +47,25 @@ namespace RougeLikeLite
         /// Attacks a creature to deal the mini-boss's
         /// amount of damage.
         /// </summary>
-        /// <param name="c"></param>
-        public void attack(ICreature c)
+        /// <param name="c">Creature to attack</param>
+        /// <returns>The damage in the attack.</returns>
+        public int attack(ICreature c)
         {
             c.Health -= Damage;
+            return Damage;
+        }
+
+        /// <summary>
+        /// Defend against an attack.
+        /// </summary>
+        /// <param name="attack">How much damage is in the attack.</param>
+        /// <returns>How much damage gets through the defense.</returns>
+        public int defend(int attack)
+        {
+            int defense = Damage / 3;
+            int result = attack - defense;
+            if (result <= 0) { return 0; }
+            return result;
         }
 
         /// <summary>
