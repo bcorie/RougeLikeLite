@@ -35,11 +35,13 @@ namespace RougeLikeLite
         }
 
         /// <summary>
-        /// Attack a creature.
+        /// Attacks a creature to deal the creature's
+        /// amount of damage.
         /// </summary>
-        /// <param name="creature">The creature to damage.</param>
+        /// <param name="c">Creature to attack</param>
+        /// <param name="commit">True if the attack should be executed, false if it should be calculated.</param>
         /// <returns>The damage in the attack.</returns>
-        int attack(ICreature creature);
+        public int attack(ICreature c, bool commit);
 
         /// <summary>
         /// Defend against an attack

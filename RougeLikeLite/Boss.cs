@@ -12,6 +12,8 @@ namespace RougeLikeLite
     internal class Boss : ICreature
     {
         private int baseCalc = 0;
+        private Random rand = new Random();
+
         /// <summary>
         /// Creates a boss. Determines how
         /// to scale boss stats based on
@@ -48,11 +50,16 @@ namespace RougeLikeLite
         /// amount of damage.
         /// </summary>
         /// <param name="c">Creature to attack</param>
+        /// <param name="commit">True if the attack should be executed, false if it should be calculated.</param>
         /// <returns>The damage in the attack.</returns>
-        public int attack(ICreature c)
+        public int attack(ICreature c, bool commit)
         {
-            c.Health -= Damage;
-            return Damage;
+            int damage = rand.Next(Damage / 3, Damage * 2 * 3);
+            if (commit)
+            {
+                c.Health -= damage;
+            }
+            return damage;
         }
 
         /// <summary>
