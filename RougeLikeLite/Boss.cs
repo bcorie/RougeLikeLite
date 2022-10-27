@@ -52,7 +52,7 @@ namespace RougeLikeLite
         /// <param name="c">Creature to attack</param>
         /// <param name="commit">True if the attack should be executed, false if it should be calculated.</param>
         /// <returns>The damage in the attack.</returns>
-        public int attack(ICreature c, bool commit)
+        public int Attack(ICreature c, bool commit)
         {
             int damage = rand.Next(Damage / 3, Damage * 2 * 3);
             if (commit)
@@ -67,7 +67,7 @@ namespace RougeLikeLite
         /// </summary>
         /// <param name="attack">How much damage is in the attack.</param>
         /// <returns>How much damage gets through the defense.</returns>
-        public int defend(int attack)
+        public int Defend(int attack)
         {
             int defense = Damage / 3;
             int result = attack - defense;
@@ -79,7 +79,7 @@ namespace RougeLikeLite
         /// The experience reward for the player to receive.
         /// </summary>
         /// <returns>The half of the health and damage of the boss.</returns>
-        public int getReward()
+        public int GetReward()
         {
             return (Health + Damage) / 2;
         }

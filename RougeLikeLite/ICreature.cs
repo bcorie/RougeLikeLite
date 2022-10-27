@@ -41,13 +41,13 @@ namespace RougeLikeLite
         /// <param name="c">Creature to attack</param>
         /// <param name="commit">True if the attack should be executed, false if it should be calculated.</param>
         /// <returns>The damage in the attack.</returns>
-        public int attack(ICreature c, bool commit);
+        public int Attack(ICreature c, bool commit);
 
         /// <summary>
         /// Defend against an attack
         /// </summary>
         /// <param name="attack">Value of the attack attempt.</param>
         /// <returns>Damage that goes through the defense. 0 if the attack if completely defended.</returns>
-        int defend(int attack);
+        public int Defend(int attack);
     }
 }
