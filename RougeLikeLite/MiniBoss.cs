@@ -12,6 +12,7 @@ namespace RougeLikeLite
     internal class MiniBoss : ICreature
     {
         private Random rand = new Random();
+        private int reward;
 
         private int baseCalc = 0;
         /// <summary>
@@ -23,6 +24,9 @@ namespace RougeLikeLite
         public MiniBoss(Player p)
         {
             baseCalc = p.Level;
+            health = (int)(baseCalc * 1.2);
+            damage = (int)(baseCalc * 1.5);
+            reward = health + damage;
         }
 
         private int health;
@@ -32,7 +36,8 @@ namespace RougeLikeLite
         /// </summary>
         public int Health
         {
-            get => health; set => health = (int)(baseCalc * 1.2);
+            get { return health; }
+            set { health = value; }
         }
 
         private int damage;
@@ -42,7 +47,8 @@ namespace RougeLikeLite
         /// </summary>
         public int Damage
         {
-            get => damage; set => damage = (int)(baseCalc * 1.5);
+            get { return damage; }
+            set { damage = value; }
         }
 
         /// <summary>
@@ -54,7 +60,7 @@ namespace RougeLikeLite
         /// <returns>The damage in the attack.</returns>
         public int Attack(ICreature c, bool commit)
         {
-            int damage = rand.Next(Damage / 3, Damage * 2 * 3);
+            int damage = rand.Next((Damage / 3) + 1, (Damage * 2 / 3) + 1);
             if (commit)
             {
                 c.Health -= damage;
@@ -81,7 +87,7 @@ namespace RougeLikeLite
         /// <returns>The half of the health and damage of the mini-boss.</returns>
         public int GetReward()
         {
-            return (Health + Damage) / 2;
+            return reward;
         }
 
     }
