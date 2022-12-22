@@ -1,6 +1,6 @@
 # RougeLikeLite
 
-**Midterm assignment for IGME 206**
+## Midterm assignment for IGME 206
 
 Write a short RPG with the following specifications:
 *	User prompted commands with enough error checking to ensure that basic mistakes are handled.
@@ -14,4 +14,3 @@ Write a short RPG with the following specifications:
   Assuming you’re reading the whole test and hit Google, you might have found http://www.roguebasin.com/index.php/C_Sharp. 
 *	The game needs enough balance that it goes a few turns and has a clear end. I can’t promise I
   will do everything possible, and if there’s something special, make it happen very early in the gameplay.
-
