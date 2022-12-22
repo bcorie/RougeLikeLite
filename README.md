@@ -1,8 +1,7 @@
 # RougeLikeLite
-Part of RIT IGME 206 Midterm
-IGME 206: Game Development for Programmers
 
-Details of assignment:
+Midterm assignment for IGME 206
+
 Write a short RPG with the following specifications:
 •	User prompted commands with enough error checking to ensure that basic mistakes are handled.
   For example, you’d welcome the user, describe an interaction with a particular enemy, give an
